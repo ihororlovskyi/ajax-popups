@@ -1,0 +1,23 @@
+.popup-maker {
+    // padding: 50px 10px;
+    padding: 20px;
+    max-width: 666px;
+    margin: 0 auto;
+
+    &__nav {
+    }
+
+    &__content {
+        text-align: left;
+    }
+
+    &__link {
+        padding: 10px 20px;
+        display: inline-block;
+    }
+}
+
+.endless-ocean {
+    width: 100%;
+    height: auto;
+}

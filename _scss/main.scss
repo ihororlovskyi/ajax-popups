@@ -1,0 +1,11 @@
+// Variables
+@import '-vars';
+
+// Vendor
+@import '../node_modules/coriolan-ui/coriolan-ui';
+@import 'vendor/jquery-modal/jquery-modal';
+@import 'vendor/fancybox/jquery.fancybox';
+
+// UX
+@import '-base';
+@import '_components/PopupMaker/style';
