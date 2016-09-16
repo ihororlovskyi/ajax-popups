@@ -5,6 +5,7 @@ permalink: /cashbox/
 
 ### Cashbox
 
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 
 {% include Tabs/index.html %}

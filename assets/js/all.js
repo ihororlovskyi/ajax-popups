@@ -15407,14 +15407,20 @@ var inst = $('[data-remodal-id=modal]').remodal();
 function hashChanged(hash){
     // console.log("hash: "+hash);
     if(hash.startsWith("#ajax")){
-        $.ajax({url: './ajax/', success: function(result){
-            $("#remodalcontent").html(result);
-        }});
+        $.ajax({
+            url: './ajax/',
+            success: function(result){
+                $("#remodalcontent").html(result);
+            }
+        });
         inst.open();
     }else if(hash.startsWith("#cashbox")){
-        $.ajax({url: './cashbox/', success: function(result){
-            $("#remodalcontent").html(result);
-        }});
+        $.ajax({
+            url: './cashbox/',
+            success: function(result){
+                $("#remodalcontent").html(result);
+            }
+        });
         inst.open();
     }else{
         var state = inst.getState();
