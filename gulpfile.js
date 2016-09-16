@@ -7,8 +7,6 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    iconfont = require('gulp-iconfont'),
-    iconfontCss = require('gulp-iconfont-css'),
     sassUnicode = require('gulp-sass-unicode');
 
 // gulp jekyll-build
@@ -76,30 +74,34 @@ gulp.task('js-min', ['js-concat'], function () {
         .pipe(gulp.dest('assets/js/'));
 });
 
-// gulp font
-gulp.task('font', function () {
-    var fontName = 'svg-font';
+// gulp js-concat-tabs
+gulp.task('js-concat-tabs', ['sass'], function () {
+    return gulp.src([
+            '_js/lib/*',
+            '_js/vendor/jquery.easytabs.js',
+            '_js/vendor/jquery.herotabs.js',
+            '_components/Tabs/js-easytabs.js',
+            '_components/Tabs/js-herotabs.js',
+        ])
+        .pipe(concat('tabs.js'))
+        .pipe(gulp.dest('assets/js/'));
+});
 
-    return gulp.src('assets/img/svg-icons/*.svg')
-        .pipe(iconfontCss({
-            fontName: fontName,
-            path: '_scss/vendor/svg-icons/_template.scss',
-            targetPath: '../../_scss/vendor/svg-icons/_font.scss',
-            fontPath: './../fonts/'
+// gulp js-min-tabs
+gulp.task('js-min-tabs', ['js-concat-tabs'], function () {
+    return gulp.src('assets/js/tabs.js')
+        .pipe(plumber(function(error) {
+            gutil.log(gutil.colors.red(error.message));
+            this.emit('end');
         }))
-        .pipe(iconfont({
-            fontName: fontName,
-            fontHeight : 1001,
-            formats: ['svg', 'ttf', 'eot', 'woff', 'woff2'],
-            normalize: true
-        }))
-        .pipe(gulp.dest('_site/assets/fonts/'))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('assets/fonts/'));
+        .pipe(uglify())
+        .pipe(concat('tabs.min.js'))
+        .pipe(gulp.dest('assets/js/'));
 });
 
 // gulp watch
-gulp.task('watch', ['js-min', 'browser-sync'], function () {
+gulp.task('watch', ['js-min', 'js-min-tabs', 'browser-sync'], function () {
+// gulp.task('watch', ['js-min', 'browser-sync'], function () {
     gulp.watch([
         '_scss/*.scss',
         '_components/**/*.scss',
@@ -110,10 +112,10 @@ gulp.task('watch', ['js-min', 'browser-sync'], function () {
         '_components/**/*.js',
         '_components/**/*.yml',
         '_components/**/*.json',
-        '_js/**/*',
+        '_js/*',
         '_pages/**/*',
-        'assets/img/**/**/**/**/*.*',
-        'assets/fonts/**/**/*.*',
+        'assets/img/*',
+        'assets/fonts/*',
         '_config_dev.yml'
     ], ['jekyll-rebuild']);
 });

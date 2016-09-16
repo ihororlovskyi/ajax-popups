@@ -25,18 +25,13 @@ var inst = $('[data-remodal-id=modal]').remodal();
 //hashChage handler
 function hashChanged(hash){
     // console.log("hash: "+hash);
-    if(hash.startsWith("#cashbox")){
-        $.ajax({url: '/ajax/', success: function(result){
+    if(hash.startsWith("#ajax")){
+        $.ajax({url: './ajax/', success: function(result){
             $("#remodalcontent").html(result);
         }});
         inst.open();
-    }else if(hash.startsWith("#register")){
-        $.ajax({url: 'ajax2.html', success: function(result){
-            $("#remodalcontent").html(result);
-        }});
-        inst.open();
-    }else if(hash.startsWith("#remind")){
-        $.ajax({url: 'ajax3.html', success: function(result){
+    }else if(hash.startsWith("#cashbox")){
+        $.ajax({url: './cashbox/', success: function(result){
             $("#remodalcontent").html(result);
         }});
         inst.open();

@@ -23,6 +23,8 @@ $primary-color: #54bebe;
 $text-color: #666;
 $accent-color: lighten($text-color, 10%);
 
+// $bg-color: #111;
+
 $link-color: darken($text-color, 15%);
 $link-color-hover: lighten($link-color, 30%);
 
