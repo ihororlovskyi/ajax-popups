@@ -6,6 +6,7 @@ permalink: /
 # Endless Ocean Gif
 
 Pages for ajax importing:
+
 * [ajax]({{ site.baseurl }}/ajax/)
 * [cashbox]({{ site.baseurl }}/cashbox/)
 * [deposit]({{ site.baseurl }}/deposit/)
