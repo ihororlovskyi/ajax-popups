@@ -31,11 +31,11 @@ new Vue({
   template: '<App/>',
   created () {
     firebase.initializeApp({
-      apiKey: 'AIzaSyAyVD0EMF-h2vVUR_k6uNHpuNu_lruhHmE',
-      authDomain: 'irukanji-db.firebaseapp.com',
-      databaseURL: 'https://irukanji-db.firebaseio.com',
-      projectId: 'irukanji-db',
-      storageBucket: 'irukanji-db.appspot.com'
+      apiKey: 'AIzaSyCPj239s7YoNwCw2-MvFRUYdeGFtG3zLDg',
+      authDomain: 'castle-booking.firebaseapp.com',
+      databaseURL: 'https://castle-booking.firebaseio.com',
+      projectId: 'castle-booking',
+      storageBucket: 'castle-booking.appspot.com'
     })
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {

@@ -136,7 +136,7 @@
         <v-container>
           <v-layout wrap>
             <v-flex xs12 sm6>
-              <div>Irukanji &copy; {{ new Date().getFullYear() }} All Rights Reserved</div>
+              <div>Castle Booking &copy; {{ new Date().getFullYear() }} All Rights Reserved</div>
               <Network/>
             </v-flex>
           </v-layout>
@@ -157,7 +157,7 @@
     data () {
       return {
         sideNav: null,
-        homeBtn: {title: 'Irukanji', icon: 'mdi-cannabis', url: '/'},
+        homeBtn: {title: 'Castle Booking', icon: 'mdi-castle', url: '/'},
         discographyBtn: {title: 'Discography', icon: 'mdi-music', url: '/discography'},
         tracksBtn: {title: 'Tracks', icon: 'mdi-music-note', url: '/tracks'},
         profileBtn: {title: 'Profile', icon: 'mdi-account', url: '/user/profile'},
@@ -177,7 +177,7 @@
         return this.$store.getters.user.id
       },
       userIsAdmin () {
-        if (this.currentUserId === 'Gmq5awFPniRGMbUoRqmdtCDcmnH3') {
+        if (this.currentUserId === 'pi1xbhU8SuOVnfcULgYypes4vet2') {
           return true
         }
       }

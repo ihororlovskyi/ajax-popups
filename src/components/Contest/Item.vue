@@ -80,7 +80,7 @@
         return this.$store.getters.user.id
       },
       userIsAdmin () {
-        if (this.currentUserId === 'Gmq5awFPniRGMbUoRqmdtCDcmnH3') {
+        if (this.currentUserId === 'pi1xbhU8SuOVnfcULgYypes4vet2') {
           return true
         }
       }
